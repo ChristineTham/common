@@ -25,7 +25,7 @@ const image =
   <div
     class='group border-roselya bg-rosely3 dark:border-rosely8 dark:bg-rosely0 relative h-full overflow-hidden rounded-lg border-1 shadow-xl'
   >
-    <a href={import.meta.env.BASE_URL + 'blog/' + post.id}>
+    <a href={import.meta.env.BASE_URL + post.id}>
       <img
         src={image.src}
         alt={post.data.title + ' featured image'}
@@ -35,7 +35,7 @@ const image =
     </a>
     <div class='p-4'>
       {post.data.categories && <Categories categories={post.data.categories} />}
-      <a itemprop='url' href={import.meta.env.BASE_URL + 'blog/' + post.id}>
+      <a itemprop='url' href={import.meta.env.BASE_URL + post.id}>
         <h1
           itemprop='name'
           class='title-font text-rosely9 hover:text-roselyc dark:text-roselyb dark:hover:text-rosely5 mt-2 text-xl font-bold'

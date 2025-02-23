@@ -48,8 +48,8 @@ const { base, page } = Astro.props
           </a>
           {Array.from({ length: page.lastPage }, (_, index) => index + 1).map(
             (i) =>
-              page.lastPage < 10 ||
-              ([
+              ((page.lastPage < 10 ||
+              [
                 1,
                 2,
                 3,
@@ -59,7 +59,7 @@ const { base, page } = Astro.props
                 page.lastPage - 2,
                 page.lastPage - 1,
                 page.lastPage
-              ].includes(i) && (
+              ].includes(i)) && (
                 <a
                   href={base + '/' + (i > 1 ? i : '')}
                   aria-current='page'
