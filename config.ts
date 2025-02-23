@@ -1,3 +1,4 @@
+import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
 
 export interface TagType {
@@ -50,7 +51,9 @@ export const COMMUNITY_INVITE_URL = null // `https://astro.build/chat`
 
 export type Sidebar = Record<string, { text: string; link: string }[]>
 
-export async function getPosts(filter?: (post: Record<string, any>) => boolean) {
+export async function getPosts(
+  filter?: (post: Record<string, any>) => boolean
+): Promise<CollectionEntry<'blog'>[]> {
   let posts = await getCollection('blog', ({ data }) => {
     return data.draft !== true
   })

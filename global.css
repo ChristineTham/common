@@ -17,29 +17,11 @@
   --color-rosely7: #f4dede;
   --color-rosely8: #85677b;
   --color-rosely9: #b565a7;
-  --color-rosely-a: #be9cc1;
-  --color-rosely-b: #d2c4d6;
-  --color-rosely-c: #d2386c;
-  --color-rosely-d: #64bfa4;
-  --color-rosely-e: #3cadd4;
-  --color-rosely-f: #eada4f;
+  --color-roselya: #be9cc1;
+  --color-roselyb: #d2c4d6;
+  --color-roselyc: #d2386c;
+  --color-roselyd: #64bfa4;
+  --color-roselye: #3cadd4;
+  --color-roselyf: #eada4f;
   --color-primary: #8c4e80;
-}
-
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
 }

@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props
     <article class='post'>
       <header>
         <PageHero
-          title={frontmatter.title}
+          title={frontmatter.title!}
           description={frontmatter.description}
           coverImage={frontmatter.coverImage}
           socialImage={frontmatter.socialImage}

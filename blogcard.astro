@@ -23,7 +23,7 @@ const image =
 
 <section>
   <div
-    class='group border-rosely-a bg-rosely3 dark:border-rosely8 dark:bg-rosely0 relative h-full overflow-hidden rounded-lg border-1 shadow-xl'
+    class='group border-roselya bg-rosely3 dark:border-rosely8 dark:bg-rosely0 relative h-full overflow-hidden rounded-lg border-1 shadow-xl'
   >
     <a href={import.meta.env.BASE_URL + 'blog/' + post.id}>
       <img
@@ -38,7 +38,7 @@ const image =
       <a itemprop='url' href={import.meta.env.BASE_URL + 'blog/' + post.id}>
         <h1
           itemprop='name'
-          class='title-font text-rosely9 hover:text-rosely-c dark:text-rosely-b dark:hover:text-rosely5 mt-2 text-xl font-bold'
+          class='title-font text-rosely9 hover:text-roselyc dark:text-roselyb dark:hover:text-rosely5 mt-2 text-xl font-bold'
         >
           {post.data.title}
         </h1>
@@ -48,7 +48,7 @@ const image =
           post.data.pubDate && (
             <span
               itemprop='datePublished'
-              class='border-rosely-a text-rosely1 dark:border-rosely8 dark:text-rosely7 mr-3 inline-flex items-center border-r-2 py-1 pr-3 text-xs leading-none'
+              class='border-roselya text-rosely1 dark:border-rosely8 dark:text-rosely7 mr-3 inline-flex items-center border-r-2 py-1 pr-3 text-xs leading-none'
             >
               <Icon class='mr-1 h-4 w-4' name='heroicons:calendar-days' />
               {post.data.pubDate.toLocaleDateString('en-AU', {
@@ -60,7 +60,7 @@ const image =
         }
         {
           post.data.minutesRead && (
-            <span class='border-rosely-a text-rosely1 dark:border-rosely8 dark:text-rosely7 mr-3 inline-flex items-center border-r-2 py-1 pr-3 text-xs leading-none'>
+            <span class='border-roselya text-rosely1 dark:border-rosely8 dark:text-rosely7 mr-3 inline-flex items-center border-r-2 py-1 pr-3 text-xs leading-none'>
               <Icon class='mr-1 h-4 w-4' name='heroicons:clock' />
               {post.data.minutesRead}
             </span>
