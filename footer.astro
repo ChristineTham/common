@@ -12,10 +12,7 @@ const social = await getCollection('social')
     class='border-roselyb bg-rosely6 dark:bg-rosely8 fixed inset-x-0 bottom-0 z-20 flex w-full flex-col items-center border-t-2 px-4 py-1 lg:flex-row lg:px-8 lg:py-4'
   >
     <span class='flex flex-none flex-row items-center'>
-      <a
-        class='title-font flex items-center justify-center font-medium lg:justify-start'
-        href={import.meta.env.BASE_URL}
-      >
+      <a class='title-font flex items-center justify-center font-medium lg:justify-start' href='/'>
         <img src={Logo.src} alt='Footer Logo' class='dark:bg-rosely3 h-6 w-6' loading='lazy' />
         <span class='sr-only'>Logo</span>
       </a>
@@ -34,7 +31,7 @@ const social = await getCollection('social')
     <span class='flex flex-none flex-row items-center'>
       <p class='lg:border-roselyb text-sm lg:ml-4 lg:border-l-2 lg:py-1 lg:pl-4'>
         <a
-          href={import.meta.env.BASE_URL + 'privacy'}
+          href='/privacy'
           class='text-rosely9 hover:text-roselyc dark:text-roselyb dark:hover:text-rosely5 ml-1'
         >
           Privacy Policy
@@ -42,7 +39,7 @@ const social = await getCollection('social')
       </p>
       <p class='border-roselyb ml-4 border-l-2 py-1 pl-4 text-sm'>
         <a
-          href={import.meta.env.BASE_URL + 'rss.xml'}
+          href='/rss.xml'
           class='text-rosely9 hover:text-roselyc dark:text-roselyb dark:hover:text-rosely5 ml-1'
           rel='noopener noreferrer'
           target='_blank'
@@ -52,7 +49,7 @@ const social = await getCollection('social')
       </p>
       <p class='border-roselyb ml-4 border-l-2 py-1 pl-4 text-sm'>
         <a
-          href={import.meta.env.BASE_URL + 'sitemap-index.xml'}
+          href='/sitemap-index.xml'
           class='text-rosely9 hover:text-roselyc dark:text-roselyb dark:hover:text-rosely5 ml-1'
           rel='noopener noreferrer'
           target='_blank'

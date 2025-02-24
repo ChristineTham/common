@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { getEntry } from 'astro:content'
 import { Icon } from 'astro-icon/components'
 import Categories from './categories.astro'
 import Tags from './tags.astro'
+import { defaultImage } from './config'
 
 export interface Props {
   post: CollectionEntry<'blog'>
@@ -11,12 +11,11 @@ export interface Props {
 
 const { post } = Astro.props
 
-const cat = await getEntry('category', post.data.categories[0])
 const image =
   post.data.coverImage ||
   (post.data.images && post.data.images[0]) ||
   post.data.socialImage ||
-  cat!.data.coverImage
+  defaultImage
 ---
 
 <div class='bg-rosely7 dark:bg-rosely8 relative h-96 w-full max-w-none'>

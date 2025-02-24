@@ -11,13 +11,13 @@ const { year, years } = Astro.props
   <div class='container mx-auto mt-4 flex flex-col items-center md:flex-row'>
     <div class='flex flex-row pb-2 md:pb-0'>
       <a
-        href={import.meta.env.BASE_URL + 'categories'}
+        href={'/categories'}
         class='bg-rosely9 hover:bg-roselyc inline-block rounded-md px-2 py-1 text-base text-white md:text-lg'
       >
         Categories
       </a>
       <a
-        href={import.meta.env.BASE_URL + 'tags'}
+        href={'/tags'}
         class='bg-rosely9 hover:bg-roselyc ml-4 inline-block rounded-md px-2 py-1 text-base text-white md:text-lg'
       >
         Tags
@@ -28,7 +28,7 @@ const { year, years } = Astro.props
     {
       years.map((y) => (
         <a
-          href={import.meta.env.BASE_URL + y}
+          href={'/' + y}
           aria-current={year === y && 'page'}
           class:list={[
             'hover:bg-roselya ring-roselya relative inline-flex items-center rounded-md px-4 py-2 font-mono text-sm font-semibold ring-1 ring-inset focus:z-20 focus:outline-offset-0',

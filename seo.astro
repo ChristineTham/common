@@ -1,5 +1,6 @@
 ---
-import { getCollection, getEntry, type CollectionEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
 import { SEO, type TwitterCardType } from 'astro-seo'
 // import { getImage } from 'astro:assets'
 import type {
@@ -20,17 +21,12 @@ const { frontmatter } = Astro.props
 
 const social = await getCollection('social')
 const siteurl = new URL(import.meta.env.BASE_URL, Astro.url)
-const type = Astro.url.toString().includes('blog') ? 'post' : 'page'
+const type = 'post'
 const year = SiteMetadata.buildTime.getFullYear()
-const cat =
-  frontmatter.categories &&
-  frontmatter.categories.length &&
-  (await getEntry('category', frontmatter.categories[0]))
 const image =
   frontmatter.socialImage ||
   frontmatter.coverImage ||
   (frontmatter.images && frontmatter.images[0]) ||
-  (cat && cat.data.socialImage) ||
   defaultImage
 // const image = await getImage({ src: origimage, format: 'jpg', width: 1200 })
 const logo = LogoImage

@@ -1,26 +1,21 @@
 ---
-import { getEntry } from 'astro:content'
 export interface Props {
   categories: string[]
 }
 
 const { categories } = Astro.props
-
-const cats = await Promise.all(
-  categories.map(async (category) => await getEntry('category', category))
-)
 ---
 
 {
   categories && (
     <div class='flex flex-row flex-wrap items-start gap-2 pb-2'>
-      {cats.map((category) => (
+      {categories.map((category) => (
         <a
           itemprop='articleSection'
-          href={`${import.meta.env.BASE_URL}category/${encodeURIComponent(category!.id)}/`}
+          href={`/category/${encodeURIComponent(category)}/`}
           class='bg-rosely9 hover:bg-roselyc inline-block rounded-sm px-3 py-1 text-xs font-medium tracking-tight text-white uppercase'
         >
-          {category!.data.title}
+          {category}
           <span class='sr-only'>category</span>
         </a>
       ))}

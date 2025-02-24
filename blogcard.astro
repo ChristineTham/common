@@ -1,10 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { getEntry } from 'astro:content'
 // import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 import Categories from './categories.astro'
 import Tags from './tags.astro'
+import { defaultImage } from './config'
 
 export interface Props {
   post: CollectionEntry<'blog'>
@@ -12,20 +12,18 @@ export interface Props {
 
 const { post } = Astro.props
 
-const cat = await getEntry('category', post.data.categories[0])
-
 const image =
   post.data.coverImage ||
   (post.data.images && post.data.images[0]) ||
   post.data.socialImage ||
-  cat!.data.coverImage
+  defaultImage
 ---
 
 <section>
   <div
     class='group border-roselya bg-rosely3 dark:border-rosely8 dark:bg-rosely0 relative h-full overflow-hidden rounded-lg border-1 shadow-xl'
   >
-    <a href={import.meta.env.BASE_URL + post.id}>
+    <a href={import.meta.env.BASE_URL + '/' + post.id}>
       <img
         src={image.src}
         alt={post.data.title + ' featured image'}
@@ -35,7 +33,7 @@ const image =
     </a>
     <div class='p-4'>
       {post.data.categories && <Categories categories={post.data.categories} />}
-      <a itemprop='url' href={import.meta.env.BASE_URL + post.id}>
+      <a itemprop='url' href={import.meta.env.BASE_URL + '/' + post.id}>
         <h1
           itemprop='name'
           class='title-font text-rosely9 hover:text-roselyc dark:text-roselyb dark:hover:text-rosely5 mt-2 text-xl font-bold'

@@ -19,7 +19,7 @@ const { categories } = Astro.props
         .filter((cat) => cat.id != 'website')
         .map((category) => (
           <div class='group'>
-            <a itemprop='url' href={`${import.meta.env.BASE_URL}category/${category.id}/`}>
+            <a itemprop='url' href={`/category/${category.id}/`}>
               <div class='aspect-h-1 aspect-w-1 bg-rosely5 dark:bg-rosely8 relative mb-4 overflow-hidden rounded-lg shadow-xl group-hover:opacity-75'>
                 <img
                   src={category.data.icon.src}
