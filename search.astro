@@ -12,7 +12,7 @@ import { Icon } from 'astro-icon/components'
   doc: null,
   async lunr_search(term) {
     if (!this.doc) {
-      const res = await fetch('${'/' + 'search-docs.json'}')
+      const res = await fetch('/search-docs.json')
       this.doc = await res.json()
     }
     if (!this.idx) {
