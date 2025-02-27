@@ -31,9 +31,9 @@ export const SiteMetadata = {
   buildTime: new Date()
 }
 
-export { default as Logo } from './logo.svg'
+export { default as Logo } from '../images/svg/logo.svg'
 export { default as LogoImage } from './logo.png'
-export { default as defaultImage } from './my_feed.png'
+export { default as defaultImage } from '../images/undraw/my_feed.png'
 
 export const NavigationLinks = [
   { name: 'Home', href: '' },
@@ -41,10 +41,6 @@ export const NavigationLinks = [
   { name: 'Contact', href: 'contact' },
   { name: 'Blog', href: 'blog' },
   { name: 'Websites', href: 'websites' }
-]
-
-export const years = [
-  2023, 2022, 2021, 2020, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2010, 2009, 2001
 ]
 
 export const PAGE_SIZE = 48
@@ -67,4 +63,28 @@ export async function getPosts(
   return posts.sort((a, b) =>
     a.data.pubDate && b.data.pubDate ? +b.data.pubDate - +a.data.pubDate : 0
   )
+}
+
+export function getAllPosts() {
+  let allposts = [] as CollectionEntry<'blog'>[]
+  const postdict: Record<string, CollectionEntry<'blog'>[]> = import.meta.glob('../blog/*.json', {
+    import: 'default',
+    eager: true
+  })
+  for (const [file, posts] of Object.entries(postdict)) {
+    const year = file.split('/').pop()?.split('.')[0]
+    allposts = allposts.concat(
+      posts.map((post) => {
+        let newpost = post
+        newpost.id = year + '/' + post.id
+        newpost.data.pubDate = new Date(post.data.pubDate!)
+        return newpost
+      })
+    )
+  }
+  allposts = allposts.sort((a, b) =>
+    a.data.pubDate && b.data.pubDate ? +b.data.pubDate - +a.data.pubDate : 0
+  )
+
+  return allposts
 }
