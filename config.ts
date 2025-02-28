@@ -31,6 +31,10 @@ export const SiteMetadata = {
   buildTime: new Date()
 }
 
+export const years = [
+  2023, 2022, 2021, 2020, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2010, 2009, 2001
+]
+
 export { default as Logo } from './logo.svg'
 export { default as LogoImage } from './logo.png'
 export { default as defaultImage } from './my_feed.png'
