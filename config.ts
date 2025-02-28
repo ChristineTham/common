@@ -31,9 +31,9 @@ export const SiteMetadata = {
   buildTime: new Date()
 }
 
-export { default as Logo } from '../images/svg/logo.svg'
+export { default as Logo } from './logo.svg'
 export { default as LogoImage } from './logo.png'
-export { default as defaultImage } from '../images/undraw/my_feed.png'
+export { default as defaultImage } from './my_feed.png'
 
 export const NavigationLinks = [
   { name: 'Home', href: '' },
