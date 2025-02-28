@@ -8,7 +8,10 @@ import Gallery from './gallery.astro'
 import { SiteMetadata } from './config'
 
 export interface Props {
-  frontmatter: CollectionEntry<'blog'>['data'] | CollectionEntry<'page'>['data']
+  frontmatter:
+    | CollectionEntry<'blog'>['data']
+    | CollectionEntry<'page'>['data']
+    | CollectionEntry<'bio'>['data']
   schema?: string
 }
 

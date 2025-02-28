@@ -44,14 +44,9 @@ docs.forEach((doc, i) => {
     }
   }
 })
-const basefm: CollectionEntry<'page'>['data'] = {
-  // draft: frontmatter.draft,
-  title: frontmatter.title,
-  description: frontmatter.description
-}
 ---
 
-<Base frontmatter={basefm} schema='Article'>
+<Base frontmatter={frontmatter} schema='Article'>
   <main
     class='max-w-8xl relative mx-auto flex justify-center bg-white sm:px-2 lg:px-8 xl:px-12 dark:bg-slate-900'
   >
